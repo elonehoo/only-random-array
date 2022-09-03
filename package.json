@@ -1,0 +1,48 @@
+{
+  "name": "@elonehoo/only-random-array",
+  "version": "0.0.0",
+  "description": "Get consecutively unique elements from an array",
+  "license": "MIT",
+  "author": "Elone Hoo <huchengyea@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elonehoo/only-random-array"
+  },
+  "homepage": "https://github.com/elonehoo/only-random-array#readme",
+  "bugs": "https://github.com/elonehoo/only-random-array/issues",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && vite build",
+    "release": "bumpp package.json --commit --push --tag && pnpm -r publish --access public",
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@elonehoo/eslint-config": "2.0.0",
+    "@elonehoo/rimraf": "^0.0.1",
+    "@elonehoo/vite-plugin-type-ts": "^0.0.1",
+    "@types/node": "18.7.14",
+    "bumpp": "8.2.1",
+    "eslint": "8.23.0",
+    "pnpm": "7.9.5",
+    "typescript": "4.8.2",
+    "vite": "3.0.9",
+    "vitest": "0.22.1"
+  },
+  "dependencies": {
+    "@elonehoo/only-random": "^0.0.5"
+  }
+}
