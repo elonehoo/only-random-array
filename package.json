@@ -1,6 +1,6 @@
 {
   "name": "@elonehoo/only-random-array",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get consecutively unique elements from an array",
   "author": "Elone Hoo <huchengyea@163.com>",
   "license": "MIT",
