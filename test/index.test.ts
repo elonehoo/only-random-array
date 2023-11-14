@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest'
+import { expect, it } from 'vitest'
 import onlyRandomArray from '../src'
 
-test('main', () => {
+it('main', () => {
   const random = onlyRandomArray([1, 2, 3, 4])
 
   let current
