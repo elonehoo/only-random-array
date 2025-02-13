@@ -1,8 +1,0 @@
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never",
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
-  "workbench.editor.tabActionLocation": "left"
-}
