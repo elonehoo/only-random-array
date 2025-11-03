@@ -40,13 +40,13 @@
     "@elonehoo/only-random": "^0.0.9"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "6.1.0",
+    "@antfu/eslint-config": "6.2.0",
     "@elonehoo/rimraf": "0.0.1",
-    "@types/node": "22.18.12",
+    "@types/node": "22.19.0",
     "@vitest/coverage-v8": "^3.2.4",
     "bumpp": "10.3.1",
-    "eslint": "9.38.0",
-    "pnpm": "10.19.0",
+    "eslint": "9.39.0",
+    "pnpm": "10.20.0",
     "typescript": "5.9.3",
     "unbuild": "^3.6.1",
     "vite": "7.1.12",
