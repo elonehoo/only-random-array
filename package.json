@@ -43,13 +43,13 @@
     "@antfu/eslint-config": "7.7.3",
     "@elonehoo/rimraf": "0.0.1",
     "@types/node": "24.12.0",
-    "@vitest/coverage-v8": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.2",
     "bumpp": "11.0.1",
     "eslint": "10.1.0",
-    "pnpm": "10.32.1",
+    "pnpm": "10.33.0",
     "typescript": "5.9.3",
     "unbuild": "^3.6.1",
     "vite": "7.3.1",
-    "vitest": "4.1.0"
+    "vitest": "4.1.2"
   }
 }
