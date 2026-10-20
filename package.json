@@ -13,9 +13,14 @@
   "bugs": "https://github.com/elonehoo/only-random-array/issues",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./*": "./*"
   },
@@ -34,7 +39,8 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:package": "node scripts/check-package.mjs"
   },
   "dependencies": {
     "@elonehoo/only-random": "^0.0.9"

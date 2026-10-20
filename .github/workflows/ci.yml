@@ -27,7 +27,7 @@ jobs:
           version: latest
 
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm run lint
@@ -49,13 +49,16 @@ jobs:
           version: latest
 
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm run build
 
       - name: Test
-        run: pnpm run test
+        run: pnpm run test --run
+
+      - name: Packed consumer compatibility
+        run: pnpm run test:package
 
   coverage:
     runs-on: ubuntu-latest
@@ -74,7 +77,7 @@ jobs:
           version: latest
 
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Coverage
         run: pnpm run coverage
@@ -96,7 +99,7 @@ jobs:
           version: latest
 
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Typecheck
         run: pnpm run typecheck
