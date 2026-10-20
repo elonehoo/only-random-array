@@ -1,10 +1,11 @@
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, renameSync, rmSync, writeFileSync } from 'node:fs'
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import process from 'node:process'
 
 const root = process.cwd()
-const temporary = mkdtempSync(join(root, '.package-check-'))
+const temporary = mkdtempSync(join(tmpdir(), '.package-check-'))
 const consumer = join(temporary, 'consumer')
 const packageName = '@elonehoo/only-random-array'
 
@@ -18,7 +19,13 @@ try {
   const scope = join(consumer, 'node_modules', '@elonehoo')
   mkdirSync(scope, { recursive: true })
   renameSync(join(temporary, 'package'), join(scope, 'only-random-array'))
-  // A distinct package scope avoids resolving the library's self-reference.
+  // Copy the declared runtime dependency, which currently has no dependencies of its own.
+  const dependency = resolve(root, 'node_modules/@elonehoo/only-random')
+  const manifest = JSON.parse(readFileSync(join(dependency, 'package.json'), 'utf8'))
+  if (Object.keys(manifest.dependencies || {}).length)
+    throw new Error('Update the consumer fixture to include the runtime dependency closure')
+  cpSync(dependency, join(scope, 'only-random'), { recursive: true, dereference: true })
+  // An external package scope cannot inherit the repository's node_modules.
   writeFileSync(join(consumer, 'package.json'), JSON.stringify({ name: 'package-consumer', private: true, type: 'module' }))
 
   const assertion = 'const result: number = random([1, 2, 3])()\nvoid result\n'
