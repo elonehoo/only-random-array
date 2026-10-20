@@ -8,4 +8,3 @@ strictDepBuilds: true
 # Optional platform packages provide binaries; keep lifecycle scripts disabled.
 allowBuilds:
   esbuild@0.25.9 || 0.27.2: false
-  pnpm@12.14.0: false
