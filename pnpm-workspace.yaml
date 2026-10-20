@@ -1,0 +1,6 @@
+# Keep reviewed esbuild lifecycle scripts disabled; optional packages provide binaries.
+strictDepBuilds: true
+allowBuilds:
+  esbuild@0.25.9 || 0.27.2: false
+shellEmulator: true
+trustPolicy: no-downgrade

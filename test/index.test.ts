@@ -9,6 +9,7 @@ it('main', () => {
   let index = 100
   while (index--) {
     current = random()
+    expect([1, 2, 3, 4]).toContain(current)
     expect(current).not.toBe(previous)
     previous = current
   }
