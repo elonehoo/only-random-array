@@ -57,6 +57,9 @@ jobs:
       - name: Test
         run: pnpm run test --run
 
+      - name: Packed consumer compatibility
+        run: pnpm run test:package
+
   coverage:
     runs-on: ubuntu-latest
     steps:
