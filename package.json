@@ -2,7 +2,7 @@
   "name": "@elonehoo/only-random-array",
   "type": "module",
   "version": "0.0.4",
-  "packageManager": "pnpm@12.16.1",
+  "packageManager": "pnpm@12.18.0",
   "description": "Get consecutively unique elements from an array",
   "author": "Elone Hoo <hi@elonehoo.me>",
   "license": "MIT",
@@ -45,13 +45,13 @@
     "@elonehoo/rimraf": "0.0.1",
     "@types/node": "26.6.6",
     "@typescript/native": "npm:typescript@7.0.2",
-    "@vitest/coverage-v8": "^5.0.5",
+    "@vitest/coverage-v8": "^5.1.0",
     "bumpp": "12.3.0",
     "eslint": "10.14.0",
-    "pnpm": "12.16.1",
+    "pnpm": "12.18.0",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "unbuild": "^3.6.1",
-    "vite": "8.3.5",
-    "vitest": "5.0.5"
+    "vite": "8.3.6",
+    "vitest": "5.1.0"
   }
 }
